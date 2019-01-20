@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Responsive CSS Grid</title>
+	<link rel="stylesheet" href="grid.css">
+<style>
+	div[class*="large"]:nth-child(2n+1){background-color: #F08080;}
+	div[class*="large"]:nth-child(2n){background-color: #F08080;}
+	div[class*="small"]:nth-child(2n+1){background-color: #F08080;}
+	div[class*="small"]:nth-child(2n){background-color: #F08080;}
+	@media (max-width: 768px) {
+		[class*='small']:before {
+			content: "small";
+		}
+	}
+	@media (min-width: 768px) {
+		[class*='small']:before {
+			content: "large";
+		}
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="large-10 small-12"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Soopfc</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/prism.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Soopfc</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="generic.html">Css</a></li>
+							<li class="active"><a href="elements.html">Javascript</a></li>
+							<li><a href="plan.html">Plantillas</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Explicación del Javascript</h1>
+								</header>
+								<hr>
+								<center><h3>Javascript</h3></center>
+								<pre class="language-js"><code>
+El javascript que esta en nuestro framework, esta configurado solo para usarse con los menús
+y otros objectos en el framework, pero si deseas cambiar su funcionamiento
+aquí tienes el código y la explicación.
+
+// Aquí se ejecutan las funciones para el menú 5, de esta forma el menú funciona correctamente,
+iniciando cuando se inicia un evento con .clik
+$(document).ready(function() {
+    $('ul.form li a').click(
+        function(e) {
+            e.preventDefault();
+            e.stopPropagation;
+            $(this).closest('ul').find('.selected').removeClass('selected');
+            $(this).parent().addClass('selected');
+        });
+});
+
+// Aquí se ejecutan las funciones para el formulario 2, de lo cual, se ejecuta un control deslizante
+ con una velocidad de 500, tanto para arriba como para abajo.
+$(".name").focus(function(){
+  $(".name-help").slideDown(500);
+}).blur(function(){
+  $(".name-help").slideUp(500);
+});
+
+// Aquí se realiza una animación del formulario 3, de lo cual al poner el correo el usuario
+ vera un efecto de sombra.
+$(".email").focus(function(){
+  $(".email-help").slideDown(500);
+}).blur(function(){
+  $(".email-help").slideUp(500);
+});
+
+// De igual forma, aquí se realiza una animación en el input del texto del formulario 3.
+$(document).ready(function(){
+   setInterval(function() {
+$("input[type=text]").each(function() {
+   var element = $(this);
+   if (element.val() !== "") {
+     $(this).css({
+       boxShadow: 'inset 8px 0px 0  #2ecc71',
+       paddingLeft: '12px'})
+   }
+   var element = $(this);
+   if (element.val() == "") {
+       $(this).css('border-left', '1px solid #ccc')
+   }
+});
+}, 200);
+});
+
+// La continuación del formulario 3, añade otro efecto sombra al otro campo de contraseña del usuario,
+ de esta forma se completan 3, email, usuario y contraseña.
+$(document).ready(function(){
+   setInterval(function() {
+$("input[type=text]").each(function() {
+   var element = $(this);
+   if (element.val() !== "") {
+     $(this).css({
+       boxShadow: 'inset 8px 0px 0  #2ecc71',
+       paddingLeft: '12px'})
+   }
+   var element = $(this);
+   if (element.val() == "") {
+       $(this).css('border-left', '1px solid #ccc')
+   }
+});
+}, 200);
+});
+
+
+	//Se inicia la animación del menú automático desplegable, con jquery.
+
+jQuery(document).ready(function($){
+	var isLateralNavAnimating = false;
+
+	//Abrir /se abre la barra de navegación del menú
+	$('.cd-nav-trigger').on('click', function(event){
+		event.preventDefault();
+		// Aquí se realiza un if, para cerrar la  barra de navegación realizando una transición
+		if( !isLateralNavAnimating ) {
+			if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
+
+			$('body').toggleClass('navigation-is-open');
+			$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				//la animacion termina
+				isLateralNavAnimating = false;
+			});
+		}
+	});
+
+});
+
+// Se inicia una función, para la animación de la galería, con esto cuando el
+ usuario pasa click sobre cada imagen, notara un efecto suave
+	//	de la cual se inicia cuando la imagen este cargada
+! function(a) {
+    "use strict";
+    a(document).ready(function() {
+        function b() {
+            window.location = i
+        }
+        var e = a(".site-title"),
+            f = a("body");
+        setTimeout(function() {
+            f.addClass("loaded")
+        }, 150);
+        var g = a(".project-assets").children("div");
+        a.each(g, function(b, c) {
+            var d = a(this);
+            d.imagesLoaded(function() {
+                setTimeout(function() {
+                    d.addClass("loaded")
+                }, 50 + 150 * b)
+            })
+        });
+        var h = a(".projects-feed .project");
+        a.each(h, function(b, c) {
+            var d = a(this);
+            d.imagesLoaded(function() {
+                setTimeout(function() {
+                    d.addClass("loaded")
+                }, 50 + 50 * b)
+            })
+        });
+        var i;
+        a("a").on("click", function(a) {
+            return "" == this.href || null == this.href ? void a.preventDefault() : void(-1 == this.href.indexOf("#") && -1 == this.href.indexOf("mailto:") && -1 == this.href.indexOf("javascript:") && "_blank" != this.target && (a.preventDefault(), i = this.href, f.removeClass("loaded"), setTimeout(b, 250)))
+        })
+    })
+}(window.jQuery);
+
+								</code></pre>
+
+
+
+
+							</section>
+
+
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/prism.js"></script>
+
+	</body>
+</html>

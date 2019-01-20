@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Soopfc</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/prism.css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Soopfc</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Inicio</a></li>
+							<li class="active"><a href="generic.html">Css</a></li>
+							<li><a href="elements.html">Javascript</a></li>
+							<li><a href="plan.html">Plantillas</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Como usar el css</h1>
+								</header>
+								<div class="row">
+									<div class="12u 12u$(small)">
+										<center><h2>Menu</h2></center>
+										<center><ul id="menu" list-style:none>
+											<li><a href="#primero">Sistema de grillas.</a></li>
+											<li><a href="#segundo">Botones.</a></li>
+											<li><a href="#tercero">Menu desplegable.</a></li>
+											<li><a href="#cuarto">Menus.</a></li>
+											<li><a href="#quinto">Imagenes responsivas.</a></li>
+											<li><a href="#sexto">Tablas.</a></li>
+											<li><a href="#septimo">Formularios.</a></li>
+											<li><a href="#octavo">Tarjetas.</a></li>
+											<li><a href="#noveno">Footers.</a></li>
+											<li><a href="#decimo">Slider.</a></li>
+											<li class="retorno ir-arriba"><i class="material-icons md-light">arrow_upward</i></li>
+										</ul></center>
+										</div>
+										</div>
+								<hr/>
+								<div id="primero"><center><h3>Sistema de grillas</h3></center></div>
+								<b><p>El sistema de grilla funciona de una manera muy sencilla que se explica a continuacìon</p></b>
+<pre class="language-markup"><code>
+Para llamar las columnas que uno desea solo tiene que iniciarse de esta forma,
+se inicia un contenedor, luego la clase row para luego llamar las grillas,
+se define el tamaño por ejemplo large-10 y luego se define el tamaño cuando es
+responsive, por ejemplo
+small-12
+&lt;div class="container">
+&lt;div class="row">
+&lt;div class="large-10 small-12">&lt;/div>
+&lt;/div>
+&lt;div>
+
+Puedes ver un ejemplo, copiando y pegando el codigo anterior y añadiendo este estilo a las grillas.
+&lt;style>
+	div[class*="large"]:nth-child(2n+1){background-color: #F08080;}
+	div[class*="large"]:nth-child(2n){background-color: #F08080;}
+	div[class*="small"]:nth-child(2n+1){background-color: #F08080;}
+	div[class*="small"]:nth-child(2n){background-color: #F08080;}
+		@media (max-width: 768px) {
+			[class*='small']:before {
+		content: "small";
+	}
+}
+@media (min-width: 768px) {
+	[class*='small']:before {
+		content: "large";
+	}
+}
+&lt;/style>
+</code></pre>
+								<hr/>
+								<div id="segundo"><center><h3>Botones</h3></center></div>
+								<span><img src="images/btn1.jpg" alt="" /></span>
+								<span><img src="images/btn2.jpg" alt="" /></span>
+								<span><img src="images/btn3.jpg" width="80px" alt="" /></span>
+								<span><img src="images/btn4.jpg" alt="" /></span>
+								<span><img src="images/btn5.jpg" alt="" /></span>
+
+								<b><p>La forma de llamar a un boton de forma facil es con la clase boton.</p></b>
+								<pre class="language-markup"><code>
+Si quieres llamar un boton de arriba, solo tienes que boton1, boton2...
+&lt;a class="boton1" href="">boton1&lt/a>
+&lt;a class="boton2" href="">boton2&lt/a>
+&lt;a class="boton4" href="">boton4&lt/a>
+&lt;a class="boton5" href="">boton5&lt/a>
+
+								</code></pre>
+								<div id="tercero"><center><h3>Menu desplegable con css</h3></center></div>
+								<pre class="language-markup"><code>
+Se diseño un botón especial, en caso de que quieras hacer un mena desplegable automático con css,
+en caso de que desees usarlo, no olvides llamar el main.js, main2.js y los jquery para su correcto
+funcionamiento
+&lt;a href="#cd-nav" class="cd-nav-trigger">Menu
+&lt;span class="cd-nav-icon">&lt;/span>
+
+&lt;svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+&lt;circle fill="transparent" stroke="#90D4C5" stroke-width="2" cx="27" cy="27"
+r="25" stroke-dasharray="157 157" stroke-dashoffset="157">&lt;/circle>
+&lt;/svg>
+&lt;/a>
+
+&lt;div id="cd-nav" class="cd-nav">
+	&lt;div class="cd-navigation-wrapper">
+	&lt;div class="cd-half-block">
+	&lt;nav>
+	&lt;ul class="cd-primary-nav">
+		&lt;li>&lt;a href="index.html" class="selected">menu&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="news.html">menu&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="profile.html">menu&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">menu&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">menu&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/nav>
+&lt;/div>
+
+&lt;div class="cd-half-block">
+	&lt;address>
+		&lt;ul class="cd-contact-info">
+			&lt;li>&lt;a href="">menu&lt;/a>&lt;/li>
+			&lt;li>menu&lt;/li>
+		&lt;/ul>
+	&lt;ul class="cd-contact-socials">
+			&lt;li><&lt;a href="#0">menu&lt;/a>&lt;/li>
+			&lt;li><&lt;a href="#0">menu&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#0">menu&lt;/a>&lt;/li>
+	&lt;/ul>
+	&lt;/address>
+		&lt;/div>
+	&lt;/div>
+&lt;/div>
+
+								</code></pre>
+								<hr/>
+								<div id="cuarto"><center><h3>Menus de todo tipo</h3></center></div>
+								<b><p>La forma para añadir formularios a tu sitio web de una forma sencilla es esta:</p></b>
+								<span><img src="images/menu1.jpg" alt="" /><br></span>
+								<pre class="language-markup"><code>
+La forma de llamar el primer menu es de esta forma.
+&lt;nav>
+	&lt;ul class="fancyNav">
+		&lt;li id="home">&lta href="#" class="homeIcon">Home&lt;/a>&lt;/li>
+		&lt;li id="news">&lta href="#">News&lt;/a>&lt;/li>
+		&lt;li id="about">&lta href="#">About us&lt;/a>&lt;/li>
+		&lt;li id="services">&lta href="#">Services&lt;/a>&lt;/li>
+		&lt;li id="contact">&lta href="#">Contact us&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/nav>
+</code></pre>
+
+			<span><img src="images/menu2.jpg" alt="" /><br></span>
+<pre class="language-markup"><code>
+La forma de llamar el segundo menu es de esta forma:
+&lt;div id="main">
+
+&lt;ul id="navigationMenu">
+		&lt;li>
+			&lt;a class="home" href="#">
+			&lt;span>Home&lt;/span>
+			&lt;/a>
+		&lt;/li>
+
+		&lt;li>
+			&lt;a class="about" href="#">
+			&lt;span>About&lt;/span>
+			&lt;/a>
+		&lt;/li>
+
+		&lt;li>
+			&lt;a class="services" href="#">
+			&lt;span>Services&lt;/span>
+			&lt;/a>
+		&lt;/li>
+
+		&lt;li>
+			&lt;a class="portfolio" href="#">
+			&lt;span>Portfolio&lt;/span>
+			&lt;/a>
+		&lt;/li>
+
+		&lt;li>
+			&lt;a class="contact" href="#">
+			&lt;span>Contact us&lt;/span>
+			&lt;/a>
+		&lt;/li>
+&lt;/ul>
+&lt;/div>
+</code></pre><br>
+<span><img src="images/men5.jpg" alt="" /><br></span>
+<pre class="language-markup"><code>
+La forma de llamar el tercer menu, es de esta forma, se puede añadir mas opciones de menu y sub menus.
+
+&lt;ul id="button">
+ &lt;li>&lt;a href="#">Inicio&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#">Sobre nosotros&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#">Servicios&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#">Productos&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#">Contacto&lt;/a>&lt;/li>
+&lt;/ul>
+
+
+</code></pre><br/>
+<span><img src="images/menu4.jpg" alt="" /><br></span>
+<pre class="language-markup" ><code>
+La forma de llamar el 4 menu es de esta forma.
+&lt;div class="example">
+	&lt;div class="menuholder">
+		&lt;ul class="menu slide">
+			&lt;li>&lt;a href="" class="red">Home&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="" class="orange">Tutorials&lt;/a>
+&lt;div class="subs">
+&lt;dl>
+		&lt;dt>Links #1&lt;/dt>
+			&lt;dd>&lt;a href="">HTML / CSS&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">JS / jQuery&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">PHP&lt;/a>&lt;/dd>
+	&lt;/dl>
+		&lt;dl>
+			&lt;dt>Links #2&lt;/dt>
+			&lt;dd>&lt;a href="">MySQL&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">XSLT&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">Ajax&lt;/a>&lt;/dd>
+	&lt;/dl>
+&lt;dl>
+	&lt;dt>Links #3&lt;/dt>
+		&lt;dd>&lt;a href="">HTML / CSS&lt;/a>&lt;/dd>
+		&lt;dd>&lt;a href="">JS / jQuery&lt;/a>&lt;/dd>
+		&lt;dd>&lt;a href="">PHP&lt;/a>&lt;/dd>
+	&lt;/dl>
+&lt;dl>
+		&lt;dt>Links #4&lt;/dt>
+			&lt;dd>&lt;a href="">MySQL&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">XSLT&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">Ajax&lt;/a>&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;/li>
+		&lt;li>&lt;a href="" class="yellow">Resources&lt;/a>
+		&lt;div class="subs">
+&lt;dl>
+		&lt;dt>Links #5&lt;/dt>
+			&lt;dd>&lt;a href="">PHP&lt;/a>&lt;/dd>
+			&lt;dd>&lt;a href="">MySQL&lt;/a>&lt;/dd>
+&lt;/dl>
+&lt;dl>
+		&lt;dt>Links #6&lt;/dt>
+		&lt;dd>&lt;a href="">XSLT&lt;/a>&lt;/dd>
+		&lt;dd>&lt;a href="">Ajax&lt;/a>&lt;/dd>
+&lt;/dl>
+&lt;dl>
+		&lt;dt>Links #7&lt;/dt>
+		&lt;dd>&lt;a href="">HTML / CSS&lt;/a>&lt;/dd>
+		&lt;dd>&lt;a href="">JS / jQuery&lt;/a>&lt;/dd>
+&lt;/dl>
+&lt;dl>
+		&lt;dt>Links #8&lt;/dt>
+		&lt;dd>&lt;a href="">MySQL&lt;/a>&lt;/dd>
+		&lt;dd>&lt;a href="">Ajax&lt;/a>&lt;/dd>
+&lt;dl>
+&lt;/div>
+&lt;/li>
+		&lt;li>&lt;a href="" class="green">Other&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="" class="blue">About&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="" class="violet">Back&lt;/a>&lt;/li>
+&lt;/ul>
+				&lt;div class="back">&lt;/div>
+			&lt;div class="shadow">&lt;/div>
+		&lt;/div>
+	&lt;div style="clear:both">&lt;/div>
+&lt;/div>
+</code></pre>
+<span><img src="images/menu5.jpg" alt="" /><br></span>
+<pre class="language-markup" ><code>
+La forma de llamar este menu es de esta forma, recuerda que puedes adaptarlo a tus necesidades
+&lt;ul class="form">
+	&lt;li>&lt;a class="profile" href="#">&lt;i class="icon-user">&lt;/i>Edit Profile&lt;/a>&lt;/li>
+	&lt;li class="selected">&lt;a class="messages" href="#">&lt;i class="icon-envelope-alt">&lt;/i>
+	Messages &lt;em>&lt;/em>&lt;/a>&lt;/li>
+	&lt;li>&lt;a class="settings" href="#">&lt;i class="icon-cog">&lt;/i>App Settings&lt;/a>&lt;/li>
+	&lt;li>&lt;a class="logout" href="#">&lt;i class="icon-signout">&lt;/i>Logout&lt;/a>&lt;/li>
+&lt;/ul>
+</code></pre>
+<hr/>
+<div id="quinto"><center><h3>Imagenes resposivas</h3></center></div>
+<pre class="language-markup"><code>
+La forma para añadir imagenes resposivas a tu sitio web es siguiendo este ejemplo:
+&lt;section id="basic-responsive-image">
+	&lt;div class="container1">
+		&lt;h2> Imagen Responsive Básica&lt;/h2>
+		&lt;p>Esta imagen será proporcionalmente escalada para que su anchura sea del 100 % de su
+		 contenedor.El contenedor puede tener una anchura máxima de 960.&lt;/p>
+		&lt;img src="">
+	&lt;/div>
+&lt;/section>
+&lt;section id="responsive-images-columns">
+		&lt;div class="container1">
+			&lt;h2>Imagenes Responsive en Columnas&lt;/h2>
+			&lt;p>Estas imágenes se muestran adyacentes entre sí.
+			 Se escalarán proporcionalmente en función del tamaño de la ventana del navegador.&lt;/p>
+			&lt;h3>2 Columnas&lt;h3>
+			&lt;img class="two-columns" src="">
+			&lt;h3>3 Columnas&lt;/h3>
+				&lt;img class="three-columns" src="">
+		&lt;/div>
+&lt;/section>
+&lt;section id="responsive-images-breakpoints">
+	&lt;div class="container1">
+		&lt;h2>Imagenes Responsive con Breakpoints&lt;/h2>
+		&lt;p>Estas imágenes se mostrarán en 1 columna en dispositivos pequeños (teléfonos inteligentes ),
+		 en 2 columnas en dispositivos medianos (tablets), y en 4 columnas en grandes,
+		  dispositivos (equipos de escritorio).&lt;/p>
+		&lt;img class="breakpoint" src="">
+	&lt;/div>
+&lt;/section>
+&lt;section id="full-width-responsive-image">
+	&lt;div class="container1">
+		&lt;h2>Imagen Responsive  Full-width &lt;/h2>
+		&lt;p>Esta imagen será siempre 100 % de ancho , porque su contenedor no tiene ninguna
+		 propiedad de anchura máxima.&lt;/p>&lt;/div>
+		&lt;img src="">
+	&lt;/div>
+&lt;/section></code></pre>
+<hr>
+<div id="sexto"><center><h3>Tablas</h3></center></div>
+<center><span><img src="images/tabla.jpg" alt="" /></span></center><br>
+<pre class="language-markup"><code>
+La forma de hacer tablas con algunos estilos definidos son estas:
+se llama la clase que quieres aplicar, en este caso una tabla azul
+&lt;table class="blueTable">
+&lt;thead>
+	&lt;tr>
+		&lt;th>head1&lt;/th>
+		&lt;th>head2&lt;/th>
+		&lt;th>head3&lt;/th>
+		&lt;th>head4&lt;/th>
+	&lt;/tr>
+&lt;/thead>
+
+steelBlueCols
+
+&lt;table class="steelBlueCols">
+&lt;thead>
+	&lt;tr>
+		&lt;th>head1&lt;/th>
+		&lt;th>head2&lt;/th>
+		&lt;th>head3&lt;/th>
+		&lt;th>head4&lt;/th>
+	&lt;/tr>
+&lt;/thead>
+
+cinereousTable
+
+&lt;table class="cinereousTable">
+&lt;thead>
+	&lt;tr>
+		&lt;th>head1&lt;/th>
+		&lt;th>head2&lt;/th>
+		&lt;th>head3&lt;/th>
+		&lt;th>head4&lt;/th>
+	&lt;/tr>
+&lt;/thead>
+
+</code></pre>
+
+<hr>
+							<div id="septimo"><center><h3>Formularios</h3></center></div>
+							<center><span><img src="images/fom1.jpg" alt="" /></span></center><br>
+							<pre class="language-markup"><code>
+Aqui tienes un ejemplo de formulario de registro.
+&lt;form class="register">
+	&lt;div class="register-switch">
+		&lt;input type="radio" name="sex" value="F" id="sex_f" class="register-switch-input" checked>
+		&lt;label for="sex_f" class="register-switch-label">Female&lt;/label>
+		&lt;input type="radio" name="sex" value="M" id="sex_m" class="register-switch-input">
+		&lt;label for="sex_m" class="register-switch-label">Male&lt;/label>
+	&lt;/div>
+		&lt;input type="email" class="register-input" placeholder="Email address">
+		&lt;input type="password" class="register-input" placeholder="Password">
+		&lt;input  type="submit" value="Create Account" class="register-button">
+&lt;/form>
+</code></pre>
+<hr>
+<center><h3>Formulario2</h3></center>
+<center><span><img src="images/form2.jpg" alt="" /></span></center><br>
+<pre class="language-markup"><code>
+Para llamar a esta formulario solo copia el código siguiente.
+&lt;div class="Registro">
+&lt;form method="post" action="">
+	&lt;span class="fontawesome-user">&lt;/span>&lt;input type="text" required placeholder="Nombre de usuario"
+	autocomplete="off">
+	&lt;span class="fontawesome-envelope-alt">&lt;/span>&lt;input type="text" id="email"
+	 required placeholder="Correo" autocomplete="off">
+	&lt;span class="fontawesome-lock">&lt;/span>&lt;input type="password" name="password"
+	 id="password" required placeholder="Contraseña" autocomplete="off">
+	&lt;input class"enviar" type="submit" value="Registrarse" title="Registra tu cuenta">
+&lt;/form>
+</code></pre>
+<hr>
+<center><h3>Formulario3</h3></center>
+<center><span><img src="images/form3.jpg" alt="" /></span></center><br>
+<pre class="language-markup" ><code>
+Para llamar a esta formulario solo copia el código siguiente.
+&lt;div class="container5">
+	&lt;form id="signup">
+		&lt;div class="header">
+			&lt;h3>Inicio&lt;/h3>
+			&lt;p>Form&lt;/p>
+		&lt;/div>
+	&lt;div class="sep">&lt;/div>
+		&lt;div class="inputs">
+			&lt;input type="emails" placeholder="e-mail" autofocus />
+			&lt;input type="passwords" placeholder="Password" />
+	&lt;div class="checkboxy">
+			&lt;input name="cecky" id="checky" value="1" type="checkbox" />
+			&lt;label class="terms">Yo acepto los terminos&lt;/label>
+	&lt;/div>
+			&lt;a id="submit" href="#">Iniciar&lt;/a>
+		&lt;/div>
+&lt;/form>
+&lt;/div>
+
+</code></pre>
+
+<hr>
+								<div id="octavo"><center><h3>Tarjetas</h3></center></div>
+								<center><span><img src="images/ta.jpg" alt="" /></span></center><br>
+								<pre class="language-markup"><code>
+Para mandar a llamar esta carta puedes usar este código.
+
+No olvides poner el SRC de tu imagen y adecuarla al tamaño correcto
+
+&lt;ul class="cards">
+	&lt;li class="cards__item">
+		&lt;div class="card">
+			&lt;img src="https://unsplash.it/800/600?image=11" alt="">
+			&lt;div class="card__content">
+				&lt;div class="card__title">Flex&lt;/div>
+				&lt;p class="card__text">This is the shorthand for flex-grow,
+				flex-shrink and flex-basis combined. The second and third parameters
+				 (flex-shrink and flex-basis)
+				are optional. Default is 0 1 auto. </p>
+				&lt;button class="btn btn--block card__btn">Button&lt;/button>
+			&lt;/div>
+		&lt;/div>
+	&lt;/li>
+&lt;/ul>
+
+</code></pre>
+<hr>
+<center><span><img src="images/ta3.jpg" alt="" /></span></center><br>
+<pre class="language-markup"><code>
+Para mandar a llamar esta carta puedes usar este código.
+&lt;div class="blog-card spring-fever">
+	&lt;div class="title-content">
+		&lt;h3>SPRING FEVER&lt;/h3>
+		&lt;hr />
+		&lt;div class="intro">Yllamco laboris nisi ut aliquip ex ea commodo.&lt;/div>
+	&lt;/div>
+	&lt;div class="card-info">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+	&lt;/div>
+	&lt;div class="gradient-overlay">&lt;/div>
+	&lt;div class="color-overlay">&lt;/div>
+&lt;/div>
+</code></pre>
+<hr>
+							<div id="noveno"><center><h3>Footers</h3></center></div>
+							<center><span><img src="images/fo.jpg" alt="" height="25px" /></span></center><br>
+							<pre class="language-markup"><code>
+Tenemos 3 tipos de footers, creados de forma sencilla pero diferentes.
+
+Para mandar a llamar el primero el codìgo es:
+&lt;footer class="footer3"> &lt;/footer>
+Para mandar a llamar el segundo con una posición fixed es:
+&lt;footer class="footer2"> &lt;/footer>
+Para mandar a llamar el ultimo es con:
+&lt;footer class="footer3"> &lt;/footer>
+</code></pre>
+<hr>
+<div id="decimo"><center><h3>Slider</h3></center></div>
+<pre class="language-markup"><code>
+Para crear un slider con purro css y de una forma facil, puedes pegar este codigo y
+simplemente editar la ubicacion de las imagenes.
+Si quiere que el slider dure mas tiempo puedes ir a la clase
+"slider" y editar la linea cambio a los segundos que desees.
+&lt;div class="slider">
+	&lt;ul>
+		&lt;li>
+			&lt;img src="Ubicacion_de_la_imagen" alt="">
+		&lt;/li>
+		&lt;li>
+			&lt;img src="Ubicacion_de_la_imagen" alt="">
+		&lt;/li>
+		&lt;li>
+			&lt;img src="Ubicacion_de_la_imagen" alt="">
+		&lt;/li>
+		&lt;li>
+			&lt;img src="Ubicacion_de_la_imagen" alt="">
+		&lt;/li>
+		&lt;li>
+			&lt;img src="Ubicacion_de_la_imagen" alt="">
+		&lt;/li>
+		&lt;li>
+			&lt;img src=".Ubicacion_de_la_imagen" alt="">
+		&lt;/li>
+	&lt;/ul>
+&lt;/div>
+</code></pre>
+					</div>
+					</div>
+
+							</section>
+
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/prism.js"></script>
+
+			<script type="text/javascript">
+
+		      $(document).on('ready', mifuncion);
+		      function mifuncion(){
+		          $('#menu li a').on('click', laseccion);
+
+		      }
+		      function laseccion(){
+		          var seccion =$(this).attr('href');
+		          $('body, html').animate({
+		              scrollTop:$(seccion).offset().top-50
+		          }, 800);
+		          return false;
+		      }
+
+		  </script>
+			<script type="text/javascript">
+			$(document).ready(function(){
+
+				$('.ir-arriba').click(function(){
+					$('body, html').animate({
+						scrollTop: '0px'
+					}, 300);
+				});
+
+				$(window).scroll(function(){
+					if( $(this).scrollTop() > 0 ){
+						$('.ir-arriba').slideDown(300);
+					} else {
+						$('.ir-arriba').slideUp(300);
+					}
+				});
+
+			});
+
+			</script>
+	</body>
+</html>
